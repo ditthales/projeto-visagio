@@ -1,7 +1,7 @@
 
-const CartButton = ({ onClose }) => {
+const CartButton = () => {
     return (
-        <button className="w-10 h-10" onClick={onClose}>
+        <button className="w-10 h-10">
             <img src="./carrinho.png"/>
         </button>
     )

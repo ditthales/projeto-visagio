@@ -13,12 +13,12 @@ const CartPage: React.FC<CartPageProps> = ({ isOpen, onClose }) => {
   
     return (
       <>
-        <div className={`fixed inset-0 z-50 right-0 ${isOpen ? "" : "hidden"}`}>
+        <div className={`fixed z-50 right-0 top-0 bottom-0 ${isOpen ? "" : "hidden"}`}>
             <div className='flex flex-col justify-center items-center h-screen'>
-                <ProductCart type='hair' index={0}/>
-                <ProductCart type='hair' index={1}/>
-                <ProductCart type='hair' index={2}/>
-                <ProductCart type='hair' index={3}/>
+                <ProductCart type='hair' index={0} qtd={1}/>
+                <ProductCart type='hair' index={1} qtd={1}/>
+                <ProductCart type='hair' index={2} qtd={1}/>
+                <ProductCart type='hair' index={3} qtd={1}/>
                 <CloseCartButton onClose={onClose}/>
             </div>
         </div>
