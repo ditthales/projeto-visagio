@@ -2,7 +2,7 @@ import { PRIMARY_BUTTON } from "../../constants/constants"
 import PrimaryButton from "../atoms/PrimaryButton"
 
 
-const ProductCard = (props:{img:string, label:string, price:string, background:string}) => {
+const ProductCard = (props:{type:string, key:number, img:string, label:string, price:string, background:string}) => {
     return (
         <>
             <div className=" relative py-8 rounded-3xl shadow-xl flex flex-col justify-center items-center w-fit bg-cover bg-center" style={{backgroundImage: `url(${props.background})` }}>

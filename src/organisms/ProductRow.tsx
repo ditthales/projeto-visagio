@@ -10,7 +10,8 @@ const ProductRow = (props:{type:string}) => {
                 <div className=" w-10 h-1 rounded-full bg-green-500"></div>
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-10">
                     {HAIR_PRODUCTS.map((product, index) => (
-                        <ProductCard key={index}
+                        <ProductCard type={props.type}
+                        key={index}
                         img={product.img}
                         label={product.label}
                         price={product.price}
@@ -26,7 +27,8 @@ const ProductRow = (props:{type:string}) => {
                 <div className=" w-10 h-1 rounded-full bg-blue-500"></div>
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-10">
                     {BODY_PRODUCTS.map((product, index) => (
-                        <ProductCard key={index}
+                        <ProductCard type={props.type}
+                        key={index}
                         img={product.img}
                         label={product.label}
                         price={product.price}
@@ -42,7 +44,8 @@ const ProductRow = (props:{type:string}) => {
                 <div className=" w-10 h-1 rounded-full bg-red-500"></div>
                 <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 py-10">
                     {FACE_PRODUCTS.map((product, index) => (
-                        <ProductCard key={index}
+                        <ProductCard type={props.type}
+                        key={index}
                         img={product.img}
                         label={product.label}
                         price={product.price}
