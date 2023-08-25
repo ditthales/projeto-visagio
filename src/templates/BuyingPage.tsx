@@ -17,7 +17,7 @@ const BuyingPage: React.FC<BuyingPageProps> = ({ onOpen, onAddToCart }) => {
   return (
     <>
         <div className='flex flex-col'>
-          <Header onOpen={onOpen}/>
+          <Header/>
           <ProductRow type='hair' onAddToCart={handleAddToCart}/>
           <ProductRow type='face' onAddToCart={handleAddToCart}/>
           <ProductRow type='body' onAddToCart={handleAddToCart}/>
