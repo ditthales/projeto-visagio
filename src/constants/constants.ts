@@ -18,25 +18,25 @@ export const HAIR_PRODUCTS = [
         img: './products/shampoo.png',
         label: 'Shampoo',
         price: '35,00',
-        background: "/card-green.png"
+        background: "./card-green.png"
     },
     {
         img: './products/condicionador.png',
         label: 'Condicionador',
         price: '40,00',
-        background: "/card-green.png"
+        background: "./card-green.png"
     },
     {
         img: './products/mascara-cabelo.png',
         label: 'Mascara hidratante',
         price: '45,00',
-        background: "/card-green.png"
+        background: "./card-green.png"
     },
     {
         img: './products/tonico-capilar.png',
         label: 'Tônico capilar anti-calvície',
         price: '1280,00',
-        background: "/card-green.png"
+        background: "./card-green.png"
     },
 ]
 
@@ -45,25 +45,25 @@ export const BODY_PRODUCTS = [
         img: './products/esfoliante-corporal.png',
         label: 'Esfoliante corporal',
         price: '50,00',
-        background: "/card-blue.png"
+        background: "./card-blue.png"
     },
     {
         img: './products/oleo-corpo.png',
         label: 'Óleo corporal',
         price: '60,00',
-        background: "/card-blue.png"
+        background: "./card-blue.png"
     },
     {
         img: './products/perfume-corpo.png',
         label: 'Perfume fragrância rosas',
         price: '145,00',
-        background: "/card-blue.png"
+        background: "./card-blue.png"
     },
     {
         img: './products/hidratante-corpo.png',
         label: 'Hidratante corporal',
         price: '80,00',
-        background: "/card-blue.png"
+        background: "./card-blue.png"
     },
 ]
 
@@ -72,25 +72,25 @@ export const FACE_PRODUCTS = [
         img: './products/mascara-face.png',
         label: 'Mascara facial',
         price: '65,00',
-        background: "/card-red.png"
+        background: "./card-red.png"
     },
     {
         img: './products/serum-face.png',
         label: 'Sérum facial',
         price: '70,00',
-        background: "/card-red.png"
+        background: "./card-red.png"
     },
     {
         img: './products/acne.png',
         label: 'Creme anti-acne',
         price: '35,00',
-        background: "/card-red.png"
+        background: "./card-red.png"
     },
     {
         img: './products/termal-face.png',
         label: 'Água termal Poços de Caldas',
         price: '230,00',
-        background: "/card-red.png"
+        background: "./card-red.png"
     },
 ]
 

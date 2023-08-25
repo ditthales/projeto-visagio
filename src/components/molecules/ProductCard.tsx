@@ -10,7 +10,7 @@ const ProductCard = (props:{type:string, key:number, index:number, img:string, l
     
     return (
         <>
-            <div className=" relative py-8 rounded-3xl shadow-xl flex flex-col justify-center items-center w-fit bg-cover bg-center" style={{backgroundImage: `url(${props.img})` }}>
+            <div className=" relative py-8 rounded-3xl shadow-xl flex flex-col justify-center items-center w-fit bg-cover bg-center" style={{backgroundImage: `url(${props.background})` }}>
                 <div>
                     <img src={props.img} alt={props.label} className=" rounded-full" />
                 </div>
