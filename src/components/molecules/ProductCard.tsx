@@ -2,7 +2,12 @@ import { PRIMARY_BUTTON } from "../../constants/constants"
 import PrimaryButton from "../atoms/PrimaryButton"
 
 
-const ProductCard = (props:{type:string, key:number, img:string, label:string, price:string, background:string}) => {
+const ProductCard = (props:{type:string, key:number, index:number, img:string, label:string, price:string, background:string, onAction: (type:string, index:number) => void}) => {
+    
+    const handleAction = () => {
+        props.onAction(props.type, props.index);
+    }
+    
     return (
         <>
             <div className=" relative py-8 rounded-3xl shadow-xl flex flex-col justify-center items-center w-fit bg-cover bg-center" style={{backgroundImage: `url(${props.background})` }}>
@@ -15,7 +20,7 @@ const ProductCard = (props:{type:string, key:number, img:string, label:string, p
                 <div className="flex flex-row justify-center items-center w-80 px-6 pt-6">
                     <p className="">R$ {props.price}</p>
                     <div className="flex-grow"></div>
-                    <PrimaryButton label="+ carrinho" classes={`${PRIMARY_BUTTON["GREEN"]}`}/>
+                    <PrimaryButton label="+ carrinho" classes={`${PRIMARY_BUTTON["GREEN"]}`} onAction={handleAction}/>
                 </div>
             </div>
         </>

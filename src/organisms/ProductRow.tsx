@@ -2,7 +2,12 @@ import ProductCard from "../components/molecules/ProductCard"
 import { HAIR_PRODUCTS, BODY_PRODUCTS, FACE_PRODUCTS } from "../constants/constants"
 
 
-const ProductRow = (props:{type:string}) => {
+const ProductRow = (props:{type:string, onAddToCart: (type: string, index: number) => void}) => {
+
+    const handleAddToCart = (type:string, index:number) => {
+        props.onAddToCart(type, index);
+    }
+
     if (props.type == "hair") {
         return (
             <div className="flex flex-col justify-center items-center w-full bg-green-200 pt-10 gap-3">
@@ -12,10 +17,12 @@ const ProductRow = (props:{type:string}) => {
                     {HAIR_PRODUCTS.map((product, index) => (
                         <ProductCard type={props.type}
                         key={index}
+                        index={index}
                         img={product.img}
                         label={product.label}
                         price={product.price}
-                        background={product.background} />
+                        background={product.background}
+                        onAction={handleAddToCart} />
                     ))}
                 </div>
             </div>
@@ -29,10 +36,12 @@ const ProductRow = (props:{type:string}) => {
                     {BODY_PRODUCTS.map((product, index) => (
                         <ProductCard type={props.type}
                         key={index}
+                        index={index}
                         img={product.img}
                         label={product.label}
                         price={product.price}
-                        background={product.background} />
+                        background={product.background}
+                        onAction={handleAddToCart} />
                     ))}
                 </div>
             </div>
@@ -46,10 +55,12 @@ const ProductRow = (props:{type:string}) => {
                     {FACE_PRODUCTS.map((product, index) => (
                         <ProductCard type={props.type}
                         key={index}
+                        index={index}
                         img={product.img}
                         label={product.label}
                         price={product.price}
-                        background={product.background} />
+                        background={product.background}
+                        onAction={handleAddToCart} />
                     ))}
                 </div>
             </div>

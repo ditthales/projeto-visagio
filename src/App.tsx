@@ -9,23 +9,7 @@ const App = () => {
     type: string;
     index: number;
     qtd: number;
-  }[]>([
-    {
-      type: "hair",
-      index: 0,
-      qtd: 7
-    },
-    {
-      type: "hair",
-      index: 1,
-      qtd: 2
-    },
-    {
-      type: "hair",
-      index: 2,
-      qtd: 1
-    }
-  ]);
+  }[]>([]);
 
   const[overlay, setOverlay] = useState(false);
   const[total, setTotal] = useState(0);
@@ -34,9 +18,14 @@ const App = () => {
     setOverlay(!overlay);
   };
 
-  const sumTotal = () => {
+  const sumTotal = (array: {
+    type: string;
+    index: number;
+    qtd: number;
+  }[] ) => {
     let total = 0;
-    productList.forEach((product) => {
+    console.log(array)
+    array.forEach((product) => {
       if (product.type == "hair") {
         total += parseFloat(HAIR_PRODUCTS[product.index].price.replace(",",".")) * product.qtd;
       } else if (product.type == "face") {
@@ -46,6 +35,7 @@ const App = () => {
       }
     })
     setTotal(total);
+    console.log(total)
   }
 
   const handleQtdChange = (index: number, newQtd: number) => {
@@ -56,14 +46,57 @@ const App = () => {
       updatedList[index].qtd = newQtd;
     }
     setProductList(updatedList);
-    sumTotal();
+    sumTotal(updatedList);
+  }
+
+  const handleProductDelete = (index: number) => {
+    const updatedList = [...productList];
+    updatedList.splice(index, 1);
+    setProductList(updatedList);
+    sumTotal(updatedList);
+  }
+
+  const handleProductAdd = (type: string, index: number) => {
+    const updatedList = [...productList];
+    const itemExists = updatedList.some(item => item.type === type && item.index === index);
+    if (itemExists) {
+      updatedList.forEach((item) => {
+        if (item.type === type && item.index === index) {
+          item.qtd += 1;
+        }
+      })
+    } else {
+    updatedList.push({
+      type: type,
+      index: index,
+      qtd: 1
+    });
+  }
+    setProductList(updatedList);
+    sumTotal(updatedList);
+  }
+
+  const handleProductFinalize = () => {
+
+  }
+
+  const handleProductDeleteAll = () => {
+    setProductList([]);
+    sumTotal([]);
   }
 
   return (
     <>
     <div>
-      <BuyingPage onOpen={handleOverlay}/>
-      <CartPage isOpen={overlay} onClose={handleOverlay} onQtdChange={handleQtdChange} productList={productList} total={total}/>
+      <BuyingPage onOpen={handleOverlay} onAddToCart={handleProductAdd}/>
+      <CartPage isOpen={overlay} 
+          onClose={handleOverlay} 
+          onQtdChange={handleQtdChange} 
+          onDelete={handleProductDelete} 
+          productList={productList} 
+          total={total}
+          onFinalize={handleProductFinalize}
+          onDeleteAll={handleProductDeleteAll}/>
     </div>
     </>
   )
