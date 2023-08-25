@@ -1,10 +1,12 @@
 import { HAIR_PRODUCTS, FACE_PRODUCTS, BODY_PRODUCTS } from "../../constants/constants"
 import { useState } from "react"
 
-const ProductCart = (props:{type:string, index:number, qtd:number}) => {
+const ProductCart = (props:{type:string, index:number, qtd:number, onQtdChange: (newQtd: number) => void}) => {
     let product = FACE_PRODUCTS[0]
 
-    const [qtd, setQtd] = useState(props.qtd)
+    const handleQtdChange = (newQtd: number) => {
+        props.onQtdChange(newQtd);
+    }
 
     if (props.type == "hair") {
         product = HAIR_PRODUCTS[props.index]
@@ -22,12 +24,16 @@ const ProductCart = (props:{type:string, index:number, qtd:number}) => {
                 <div className="flex w-32 items-start pr-4"><p className="text-sm">{product.label}</p></div>
                 <div className="flex-grow"></div>
                 <div className="flex flex-row w-32 items-center">
-                    <button className="w-6 h-6 rounded-full bg-gray-200 text-gray-500" onClick={() => {qtd > 0 ? setQtd(qtd - 1) : setQtd(0)}}>-</button>
-                    <p className="text-sm px-3 w-10 text-center">{qtd}</p>
-                    <button className="w-6 h-6 rounded-full bg-gray-200 text-gray-500" onClick={() => {qtd < 30 ? setQtd(qtd + 1) : setQtd(30)}}>+</button>
+                    <button className="w-6 h-6 rounded-full bg-gray-200 text-gray-500" onClick={() => {
+            props.qtd > 0 ? handleQtdChange(props.qtd - 1) : handleQtdChange(0);
+          }}>-</button>
+                    <p className="text-sm px-3 w-10 text-center">{props.qtd}</p>
+                    <button className="w-6 h-6 rounded-full bg-gray-200 text-gray-500" onClick={() => {
+            props.qtd < 30 ? handleQtdChange(props.qtd + 1) : handleQtdChange(30);
+          }}>+</button>
                 </div>
                 <div className="flex-grow"></div>
-                <div className="flex w-24 items-start"><p className="text-sm">R$ {((parseFloat(product.price.replace(",",".")) * qtd).toFixed(2)).replace(".",",")}</p></div>
+                <div className="flex w-24 items-start"><p className="text-sm">R$ {((parseFloat(product.price.replace(",",".")) * props.qtd).toFixed(2)).replace(".",",")}</p></div>
             </div>
             <div className=" w-full h-px rounded-full bg-black"></div>
         </div>
