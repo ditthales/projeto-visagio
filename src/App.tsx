@@ -61,7 +61,7 @@ const App = () => {
     const itemExists = updatedList.some(item => item.type === type && item.index === index);
     if (itemExists) {
       updatedList.forEach((item) => {
-        if (item.type === type && item.index === index) {
+        if (item.type === type && item.index === index && item.qtd < 30) {
           item.qtd += 1;
         }
       })
