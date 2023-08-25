@@ -1,11 +1,10 @@
 import Banner from "../components/atoms/Banner"
-import MenuBar from "../components/molecules/MenuBar"
 
 interface HeaderProps {
-    onOpen: () => void;
+    // props
 }
 
-const Header: React.FC<HeaderProps> = ({ onOpen }) => {
+const Header: React.FC<HeaderProps> = ({ }) => {
     return (
         <div className=" h-fit">
             <div className='relative'>
