@@ -1,7 +1,7 @@
 import ProductRow from '../organisms/ProductRow'
 import Header from '../organisms/Header'
 import Footer from '../organisms/Footer'
-import CartButton from '../components/atoms/CartButton'
+import CartButton from '../atoms/CartButton'
 
 interface BuyingPageProps {
   onOpen: () => void;

@@ -1,4 +1,4 @@
-import Banner from "../components/atoms/Banner"
+import Banner from "../atoms/Banner"
 
 interface HeaderProps {
     // props

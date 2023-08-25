@@ -1,8 +1,8 @@
-import ProductCart from "../components/molecules/ProductCart"
-import CloseCartButton from "../components/atoms/CloseCartButton"
-import PrimaryButton from "../components/atoms/PrimaryButton";
-import { PRIMARY_BUTTON, SECONDARY_BUTTON } from "../constants/constants";
-import SecondaryButton from "../components/atoms/SecondaryButton";
+import ProductCart from "../molecules/ProductCart"
+import CloseCartButton from "../atoms/CloseCartButton"
+import PrimaryButton from "../atoms/PrimaryButton";
+import { PRIMARY_BUTTON, SECONDARY_BUTTON } from "../../constants/constants";
+import SecondaryButton from "../atoms/SecondaryButton";
 
 interface CartPageProps {
     isOpen: boolean;

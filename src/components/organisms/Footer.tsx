@@ -1,4 +1,4 @@
-import FooterContent from "../components/molecules/FooterContent"
+import FooterContent from "../molecules/FooterContent"
 
 
 const Header = () => {

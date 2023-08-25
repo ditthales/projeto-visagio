@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import CartPage from './organisms/CartPage'
-import BuyingPage from './templates/BuyingPage'
+import CartPage from './components/organisms/CartPage'
+import BuyingPage from './components/templates/BuyingPage'
 import { HAIR_PRODUCTS, FACE_PRODUCTS, BODY_PRODUCTS } from './constants/constants';
 
 const App = () => {

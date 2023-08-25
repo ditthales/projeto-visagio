@@ -1,5 +1,5 @@
-import ProductCard from "../components/molecules/ProductCard"
-import { HAIR_PRODUCTS, BODY_PRODUCTS, FACE_PRODUCTS } from "../constants/constants"
+import ProductCard from "../molecules/ProductCard"
+import { HAIR_PRODUCTS, BODY_PRODUCTS, FACE_PRODUCTS } from "../../constants/constants"
 
 
 const ProductRow = (props:{type:string, onAddToCart: (type: string, index: number) => void}) => {
