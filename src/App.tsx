@@ -18,6 +18,10 @@ const App = () => {
     setOverlay(!overlay);
   };
 
+  const handleOpenOverlay = () => {
+    setOverlay(true);
+  }
+
   const sumTotal = (array: {
     type: string;
     index: number;
@@ -71,6 +75,7 @@ const App = () => {
       index: index,
       qtd: 1
     });
+    handleOpenOverlay()
   }
     setProductList(updatedList);
     sumTotal(updatedList);
@@ -88,7 +93,7 @@ const App = () => {
   return (
     <>
     <div>
-      <BuyingPage onOpen={handleOverlay} onAddToCart={handleProductAdd}/>
+      <BuyingPage onOpen={handleOpenOverlay} onAddToCart={handleProductAdd}/>
       <CartPage isOpen={overlay} 
           onClose={handleOverlay} 
           onQtdChange={handleQtdChange} 
