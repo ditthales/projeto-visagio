@@ -14,7 +14,7 @@ const ProductCard = (props:{type:string, key:number, index:number, img:string, l
                 <div>
                     <img src={props.img} alt={props.label} className=" rounded-full w-40" />
                 </div>
-                <div className=" flex flex-row p-4 justify-center items-center w-64"> 
+                <div className=" flex flex-row p-4 h-20 justify-center items-center text-center w-64"> 
                     <h3 className=" font-bold text-xl w-64 whitespace-normal break-words text-center">{props.label}</h3>
                 </div>
                 <div className="flex flex-row justify-center items-center w-64 px-6 pt-6">
