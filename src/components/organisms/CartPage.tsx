@@ -52,6 +52,7 @@ const CartPage: React.FC<CartPageProps> = ({ isOpen, onClose, productList, onQtd
                         <p className=" text-3xl">Carrinho</p>
                     </div>
                     <div className="overflow-y-scroll max-h-[100vh]">
+                        <img src="./carrinho-vazio.png" className={` w-60 ${productList.length == 0 ? "" : "hidden"}`}/>
                         {productList.map((product, index) => (
                             <ProductCart
                             key={index}
@@ -66,7 +67,7 @@ const CartPage: React.FC<CartPageProps> = ({ isOpen, onClose, productList, onQtd
                     <div className=" flex flex-col flex-grow justify-between items-center w-full px-6 py-4">
                         <p className=" text-xl pb-3">Total: R$ {(total.toFixed(2)).replace(".",",")}</p>
                         <div className="flex-grow"></div>
-                        <PrimaryButton label="Finalizar compra" classes={`${PRIMARY_BUTTON["GREEN"]}`} onAction={handleFinalize}/>
+                        <PrimaryButton label="Finalizar compra" classes={`${total == 0 ? `${PRIMARY_BUTTON["GRAY"]} cursor-not-allowed disabled` : PRIMARY_BUTTON["GREEN"]}`} onAction={handleFinalize}/>
                         <div className="pt-2"><SecondaryButton label={"Esvaziar carrinho"} classes={`${SECONDARY_BUTTON["RED"]} w-40`} onAction={handleDeleteAll}/></div>
                     </div>
                 </div>

@@ -28,7 +28,6 @@ const App = () => {
     qtd: number;
   }[] ) => {
     let total = 0;
-    console.log(array)
     array.forEach((product) => {
       if (product.type == "hair") {
         total += parseFloat(HAIR_PRODUCTS[product.index].price.replace(",",".")) * product.qtd;
@@ -39,7 +38,6 @@ const App = () => {
       }
     })
     setTotal(total);
-    console.log(total)
   }
 
   const handleQtdChange = (index: number, newQtd: number) => {
@@ -82,7 +80,7 @@ const App = () => {
   }
 
   const handleProductFinalize = () => {
-
+    console.log("Compra finalizada!")
   }
 
   const handleProductDeleteAll = () => {
