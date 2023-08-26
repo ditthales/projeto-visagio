@@ -2,6 +2,7 @@ import { useState } from 'react'
 import CartPage from './components/organisms/CartPage'
 import BuyingPage from './components/templates/BuyingPage'
 import { HAIR_PRODUCTS, FACE_PRODUCTS, BODY_PRODUCTS } from './constants/constants';
+import FinalizationBanner from './components/molecules/FinalizationBanner';
 
 const App = () => {
 
@@ -12,11 +13,16 @@ const App = () => {
   }[]>([]);
 
   const[overlay, setOverlay] = useState(false);
+  const[finalizationOverlay, setFinalizationOverlay] = useState(false);
   const[total, setTotal] = useState(0);
 
   const handleOverlay = () => {
     setOverlay(!overlay);
   };
+
+  const handleFinalizationOverlay = () => {
+    setFinalizationOverlay(!finalizationOverlay);
+  }  
 
   const handleOpenOverlay = () => {
     setOverlay(true);
@@ -80,7 +86,11 @@ const App = () => {
   }
 
   const handleProductFinalize = () => {
-    console.log("Compra finalizada!")
+    handleFinalizationOverlay();
+    setProductList([]);
+    setTotal(0);
+    handleOverlay();
+    
   }
 
   const handleProductDeleteAll = () => {
@@ -91,6 +101,7 @@ const App = () => {
   return (
     <>
     <div>
+      <FinalizationBanner isOpen={finalizationOverlay} onClose={handleFinalizationOverlay}/>
       <BuyingPage onOpen={handleOpenOverlay} onAddToCart={handleProductAdd}/>
       <CartPage isOpen={overlay} 
           onClose={handleOverlay} 
@@ -100,6 +111,7 @@ const App = () => {
           total={total}
           onFinalize={handleProductFinalize}
           onDeleteAll={handleProductDeleteAll}/>
+      
     </div>
     </>
   )

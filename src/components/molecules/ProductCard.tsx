@@ -12,12 +12,12 @@ const ProductCard = (props:{type:string, key:number, index:number, img:string, l
         <>
             <div className=" relative py-8 rounded-3xl shadow-xl flex flex-col justify-center items-center w-fit bg-cover bg-center" style={{backgroundImage: `url(${props.background})` }}>
                 <div>
-                    <img src={props.img} alt={props.label} className=" rounded-full" />
+                    <img src={props.img} alt={props.label} className=" rounded-full w-40" />
                 </div>
-                <div className=" flex flex-row p-4 justify-center items-center w-80"> 
-                    <h3 className=" font-bold text-xl w-80 whitespace-normal break-words text-center">{props.label}</h3>
+                <div className=" flex flex-row p-4 justify-center items-center w-64"> 
+                    <h3 className=" font-bold text-xl w-64 whitespace-normal break-words text-center">{props.label}</h3>
                 </div>
-                <div className="flex flex-row justify-center items-center w-80 px-6 pt-6">
+                <div className="flex flex-row justify-center items-center w-64 px-6 pt-6">
                     <p className="">R$ {props.price}</p>
                     <div className="flex-grow"></div>
                     <PrimaryButton label="+ carrinho" classes={`${PRIMARY_BUTTON["GREEN"]}`} onAction={handleAction}/>

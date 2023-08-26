@@ -39,14 +39,10 @@ const CartPage: React.FC<CartPageProps> = ({ isOpen, onClose, productList, onQtd
 
     return (
       <>
-        <div className={`fixed z-50 right-0 top-0 bottom-0 transition-transform ${
+        <div className={`fixed z-40 right-0 top-0 bottom-0 transition-transform ${
                     isOpen ? ' translate-x-0' : 'translate-x-full'
                 } duration-500`}>
             <div className="flex flex-row">
-                <div className="flex flex-col p-4">
-                    <CloseCartButton onClose={onClose}/>
-                    <div className="flex-grow"></div>
-                </div>
                 <div className='flex flex-col justify-start items-start h-screen bg-white shadow-lg'>
                     <div className="flex flex-row justify-center items-center text-center w-full px-6 pt-6 pb-4">
                         <p className=" text-3xl">Carrinho</p>
@@ -73,6 +69,9 @@ const CartPage: React.FC<CartPageProps> = ({ isOpen, onClose, productList, onQtd
                 </div>
             </div>
         </div>
+        <div className={`fixed z-40 top-4 right-0 pr-64 ${isOpen ? 'translate-x-0' : 'translate-x-full'} transition-transform duration-500`}>
+                <CloseCartButton onClose={onClose} />
+            </div>
       </>
     )
   }
