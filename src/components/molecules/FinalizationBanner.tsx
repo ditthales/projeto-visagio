@@ -32,10 +32,10 @@ const FinalizationBanner = (props:{isOpen:boolean, onClose: () => void}) => {
 
     return (
         <div className={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center ${props.isOpen ? "" : "hidden"}`}>
-            <div className=" px-10 flex flex-col justify-center items-center w-1/2 h-1/2 gap-10 bg-white rounded-3xl">
-                <h3 className=" text-2xl font-bold">Compra Finalizada com sucesso!</h3>
-                <p className="text-justify">{"Acompanhe seu pedido através do código: " + gerarPedido()}</p>
-                <p className="text-justify">{"O código de rastreio é: " + gerarCorreios()}</p>
+            <div className=" px-10 flex flex-col justify-center items-center w-1/2 h-1/2 gap-4 sm:gap-8 bg-white rounded-3xl">
+                <h3 className=" text-sm sm:text-2xl font-bold">Compra Finalizada com sucesso!</h3>
+                <p className="text-xs sm:text-lg text-justify">{"Acompanhe seu pedido através do código: " + gerarPedido()}</p>
+                <p className=" text-xs sm:text-lg text-justify">{"O código de rastreio é: " + gerarCorreios()}</p>
                 <PrimaryButton label="Entendi" classes={PRIMARY_BUTTON["GREEN"]} onAction={props.onClose}></PrimaryButton>
             </div>
         </div>
