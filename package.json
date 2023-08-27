@@ -2,7 +2,7 @@
   "name": "projeto-rocketlab",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ditthales.github.io/projeto-visagio",
+  "homepage": "https://thalesfraga.dev/projeto-visagio",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
